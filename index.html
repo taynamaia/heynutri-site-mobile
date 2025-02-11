@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Heynutri - Transforme sua saúde com atendimento nutricional personalizado e suporte contínuo." />
-    <meta name="keywords" content="nutrição, alimentação saudável, nutricionista online, plano alimentar, dieta personalizada, doenças crônicas, autoimunes, metabólicas, transtornos alimentares" />
+    <meta name="keywords" content="nutrição, alimentação saudável, nutricionista online, plano alimentar, dieta personalizada, doenças crônicas, autoimunes, metabólicas, transtornos alimentares, alta performance, atletas" />
     <meta name="author" content="Heynutri" />
     <title>Heynutri - Nutrição e acompanhamento diário na palma da sua mão</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,172 +18,95 @@
 </head>
 <body class="bg-gray-100">
     
-    <!-- Header Melhorado -->
+    <!-- Header Responsivo -->
     <header class="bg-[#0bbdc3] py-4 px-8 flex items-center justify-between shadow-md">
-        <img src="./logo-heynutri.png" alt="Logo Heynutri" class="w-48 mr-4">
-        <nav>
-               <ul class="flex space-x-6 text-white font-semibold ml-auto">
-                <li><a href="#beneficios" class="hover:underline">Benefícios</a></li>
-                <li><a href="https://forms.gle/RtUr1LCciy8mggv69" target="_blank" class="hover:underline">Cadastre-se agora!</a></li>
-                <li><a href="http://wa.me/551148632295" class="hover:underline">Fale conosco</a></li>
-            </ul>
+        <img src="./logo-heynutri.png" alt="Logo Heynutri" class="w-28 md:w-48">
+        <button id="menu-toggle" class="md:hidden text-white text-2xl">☰</button>
+        <nav id="menu" class="hidden md:flex md:space-x-6 text-white font-semibold">
+            <a href="#beneficios" class="hover:underline">Benefícios</a>
+            <a href="https://forms.gle/RtUr1LCciy8mggv69" target="_blank" class="hover:underline">Cadastre-se</a>
+            <a href="http://wa.me/551148632295" class="hover:underline">Fale conosco</a>
         </nav>
     </header>
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function () {
+            document.getElementById("menu").classList.toggle("hidden");
+        });
+    </script>
     
-    <!-- Seção Hero com Logo e Imagem -->
-    <section class="flex flex-col items-center text-center py-32 md:py-40 bg-[#0bbdc3] text-white px-12 md:px-40 flex justify-center">
-        <div class="w-full max-w-4xl flex flex-col items-center justify-center">
-            <h1 class="text-6xl md:text-7xl leading-tight font-open-sans-extra-bold mt-3">A saúde começa<br>no prato!</h1>
-            <p class="mt-4 text-xl md:text-2xl font-medium">Você sente que sua alimentação impacta sua saúde de forma negativa? <br> Já tentou seguir um plano alimentar e desistiu em seguida?</p>
-            <p class="mt-4 text-lg md:text-xl max-w-3xl leading-relaxed">Transforme sua saúde se conectando com os melhores nutricionistas especializados e seja acompanhado diariamente para se sentir engajado e alcançar seus objetivos.</p>
-            <a href="http://wa.me/551148632295" class="mt-10 inline-block px-10 py-5 bg-white text-[#0bbdc3] font-bold text-2xl rounded-full shadow-xl hover:bg-gray-200 transition-all">Mude sua saúde hoje com a Heynutri!</a>
+    <!-- Hero Responsivo com Imagem e Balão -->
+    <section class="relative flex flex-col md:flex-row items-center justify-between py-10 px-6 bg-[#0bbdc3] text-white">
+        <div class="md:w-1/2 text-left relative">
+            <h1 class="text-3xl md:text-5xl font-open-sans-extra-bold">A saúde começa no prato!</h1>
+            <p class="mt-4 text-base md:text-xl">Já tentou seguir um plano alimentar e desistiu em seguida?</p>
+            <p class="mt-4 text-base md:text-xl">Se conecte com os melhores nutricionistas e seja acompanhado diariamente para se sentir motivado e alcançar seus objetivos.</p>
+            <a href="http://wa.me/551148632295" class="mt-6 px-5 py-2 bg-white text-[#0bbdc3] font-bold text-lg md:text-xl rounded-full inline-block">Mude sua saúde hoje!</a>
         </div>
-        
-    </section>
-    
-          <!-- Benefícios -->
-    <section id="beneficios" class="py-8 px-4 md:px-8 flex flex-col items-center justify-center text-center">
-        <h2 class="text-3xl font-bold">Por que escolher a Heynutri?</h2>
-        <div class="mt-8 flex flex-wrap justify-center gap-8">
-            <div class="bg-white p-4 md:p-6 rounded-lg shadow-md w-64 md:w-72">
-                <h3 class="text-xl font-semibold">A melhor rede de nutricionistas a qualquer hora, em qualquer lugar</h3>
-                <p class="text-gray-600">Se conecte com os melhores nutricionistas especializados.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md w-72">
-                <h3 class="text-xl font-semibold">Plano alimentar personalizado e prático</h3>
-                <p class="text-gray-600">Alinhado à sua rotina, objetivos, necessidades de saúde, estilo de vida, e que caiba no seu bolso.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md w-72">
-                <h3 class="text-xl font-semibold">Acompanhamento contínuo</h3>
-                <p class="text-gray-600">Mantenha-se no caminho certo com acompanhamento e suporte especializado.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md w-72">
-                <h3 class="text-xl font-semibold">Sem dietas restritivas</h3>
-                <p class="text-gray-600">Apenas estratégias nutricionais que realmente funcionam para você com foco em melhorar sua saúde.</p>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-md w-72">
-                <h3 class="text-xl font-semibold">A melhor solução com foco em qualidade de vida e longevidade.</h3>
-                <p class="text-gray-600">Ideal para pessoas com doenças crônicas, autoimunes, metabólicas, entre outras.
+        <div class="md:w-1/2 relative flex justify-center mt-8 md:mt-0">
+            <img src="./paciente-feliz.png" alt="Paciente feliz após acompanhamento nutricional" class="w-full max-w-xs md:max-w-md h-auto rounded-lg shadow-lg">
+            <!-- Balão de Notificação Heynutri -->
+            <div class="absolute top-4 right-20 bg-white text-[#000000] p-2 rounded-lg shadow-md w-56 h-auto text-xs flex items-center space-x-2 backdrop-blur-md bg-opacity-80">
+                <img src="./logo-heynutri-col.png" alt="Logo Heynutri" class="w-8 h-8">
+                <p class="leading-tight">
+                    <strong>Isso aí, Fernando!</strong><br>
+                    Ajustarei hoje seu plano para compensar a pizza do almoço e seguirmos com o seu objetivo!
+                    <strong>Vamos juntos!</strong>
                 </p>
             </div>
+        </div>
+    </section>
+    
+    <!-- Benefícios Responsivos -->
+    <section id="beneficios" class="py-8 px-4 md:px-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-center">Por que escolher a Heynutri?</h2>
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center">
+                <h3 class="text-lg md:text-xl font-semibold">Nutricionistas sempre disponíveis</h3>
+                <p class="text-gray-600 text-sm md:text-base">Se conecte com os melhores especialistas.</p>
+            </div>
+            <div class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center">
+                <h3 class="text-lg md:text-xl font-semibold">Plano alimentar personalizado</h3>
+                <p class="text-gray-600 text-sm md:text-base">Feito para sua rotina e necessidades.</p>
+            </div>
+            <div class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center">
+                <h3 class="text-lg md:text-xl font-semibold">Acompanhamento e suporte diário</h3>
+                <p class="text-gray-600 text-sm md:text-base">Mantenha-se motivado no caminho certo.</p>
+            </div>
+            <div class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center">
+                <h3 class="text-lg md:text-xl font-semibold">Desafios e recompensas</h3>
+                <p class="text-gray-600 text-sm md:text-base">Concorra a recompensas conforme evolução.</p>
+            </div>
+            <div class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center">
+                <h3 class="text-lg md:text-xl font-semibold">Sem dietas restritivas</h3>
+                <p class="text-gray-600 text-sm md:text-base">Plano flexível e que realmente funciona para você.</p>
+            </div>
+            <div class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center">
+                <h3 class="text-lg md:text-xl font-semibold">Foco em qualidade de vida e longevidade</h3>
+                <p class="text-gray-600 text-sm md:text-base">Ideal para pessoas com doenças crônicas, autoimunes, entre outras.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Formulário Responsivo -->
+    <section id="formulario" class="py-8 px-4 md:px-8 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold">Cadastre-se para receber novidades</h2>
+        <form action="https://formsubmit.co/contatoheynutri@gmail.com" method="POST" class="mt-6 w-full max-w-lg mx-auto bg-gray-100 p-6 rounded-lg">
+            <input type="text" name="nome" placeholder="Nome" required class="w-full p-2 border rounded text-sm md:text-base">
+            <input type="email" name="email" placeholder="Email" required class="w-full p-2 border rounded mt-4 text-sm md:text-base">
+            <input type="tel" name="telefone" placeholder="(XX) XXXXX-XXXX" required class="w-full p-2 border rounded mt-4 text-sm md:text-base">
+            <button type="submit" class="w-full bg-[#0bbdc3] text-white py-2 px-4 rounded-lg font-bold hover:bg-[#099da3] mt-4 text-sm md:text-base">Cadastrar</button>
+        </form>
+    </section>
+    
+    <!-- Rodapé Responsivo -->
+    <footer class="text-center py-6 bg-gray-800 text-white flex flex-col md:flex-row items-center justify-between px-6">
+        <p class="text-sm md:text-base">&copy; 2024 Heynutri. Todos os direitos reservados.</p>
+        <div class="flex space-x-4 mt-4 md:mt-0">
+            <a href="http://wa.me/551148632295"><img src="./icons/icon-whatsapp.png" class="w-5 md:w-6"></a>
+            <a href="https://www.instagram.com/heynutrioficial"><img src="./icons/icon-instagram.png" class="w-5 md:w-6"></a>
+            <a href="https://www.linkedin.com/company/heynutri/"><img src="./icons/icon-linkedin.png" class="w-5 md:w-6"></a>
+            <a href="mailto:contatoheynutri@gmail.com"><img src="./icons/icon-email.png" class="w-5 md:w-6"></a>
 
-            <div class="bg-white p-6 rounded-lg shadow-md w-72">
-                <h3 class="text-xl font-semibold">Comunidade ativa</h3>
-                <p class="text-gray-600">Conheça e troque experiências com outros pacientes.
-                </p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md w-72">
-                <h3 class="text-xl font-semibold">Desafios e recompensas</h3>
-                <p class="text-gray-600">Participe de desafios e concorra a recompensas conforme engajamento no plano alimentar.
-                </p>
-            </div>
-              
-        </div>
-    </section>
-    
-    <!-- Seção Como Funciona -->
-    <section id="como-funciona" class="py-10 px-8 flex flex-col items-center text-center bg-white">
-        <h2 class="text-3xl font-bold">Como funciona</h2>
-        <div class="mt-8 flex flex-wrap justify-center gap-8">
-            <img src="./fluxo-como-funciona.png" alt="Fluxo de funcionamento Heynutri" class="w-full max-w-4xl rounded-lg">
-        </div>
-        <a href="https://forms.gle/RtUr1LCciy8mggv69" target="_blank" class="mt-6 inline-block px-6 py-3 bg-[#0bbdc3] text-white font-bold rounded-lg shadow-md hover:bg-[#099da3]">Cadastre-se para ter mais saúde e qualidade de vida!</a></a>
-    </section>
-
-    <!-- Seção Depoimentos -->
-    <section class="py-10 px-8 flex flex-col items-center text-center bg-gray-100">
-        <h2 class="text-3xl font-bold">O que os pacientes que passaram pela Heynutri dizem</h2>
-        <div class="mt-8 flex flex-wrap justify-center gap-8">
-            <div class="bg-white p-4 md:p-6 rounded-lg shadow-md w-64 md:w-80 text-center">
-                <p class="text-gray-600 italic">"Eu tô feliz, mesmo com as dificuldades eu perdi 3kg. Acho que foi um bom resultado."</p>
-                <p class="mt-4 font-semibold">- Laura V.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md w-80 text-center">
-                <p class="text-gray-600 italic">"Cada semana no futebol tenho melhorado minha performance, mas sobre o peso ainda não consegui reduzir."</p>
-                <p class="mt-4 font-semibold">- Emerson S.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Formulário de Captura de Leads -->
-    <section id="formulario" class="py-8 px-8 bg-white flex flex-col items-center justify-center text-center">
-        <h2 class="text-3xl font-bold">Cadastre-se para receber novidades</h2>
-<form action="https://formsubmit.co/contatoheynutri@gmail.com" method="POST" target="_blank" class="mt-6 w-full max-w-lg bg-gray-100 p-6 rounded-lg shadow-md text-left">
-    <input type="hidden" name="_captcha" value="false">
-            <div class="grid grid-cols-2 gap-4">
-        <div>
-            <label class="block text-gray-700">Nome</label>
-            <input type="text" name="entry.123456789" required placeholder="Digite seu nome" class="w-full p-2 border rounded">
-        </div>
-        <div>
-                  <label class="block text-gray-700">Sobrenome</label>
-            <input type="text" name="entry.987654321" required placeholder="Digite seu sobrenome" class="w-full p-2 border rounded">
-            </div>
-    </div>
-    <div class="mt-4">
-        <label class="block text-gray-700">Email</label>
-        <input type="email" name="entry.1122334455" required placeholder="seuemail@email.com" class="w-full p-2 border rounded">
-    </div>
-    <div class="mt-4">
-        <label class="block text-gray-700">Telefone (com DDD)</label>
-        <input type="tel" name="entry.5566778899" id="telefone" required placeholder="(XX) XXXXX-XXXX" class="w-full p-2 border rounded">
-    </div>
-    <div class="grid grid-cols-2 gap-4 mt-4">
-        <div>
-            <label class="block text-gray-700">Cidade</label>
-            <input type="text" name="entry.2233445566" required placeholder="São Paulo" class="w-full p-2 border rounded">
-        </div>
-        <div>
-            <label class="block text-gray-700">UF</label>
-            <input type="text" name="entry.6677889900" required placeholder="SP" class="w-full p-2 border rounded" maxlength="2">
-        </div>
-    </div>
-    <input type="hidden" name="_captcha" value="false">
-    <button type="submit" class="w-full bg-[#0bbdc3] text-white py-2 px-4 rounded-lg font-bold hover:bg-[#099da3] mt-4">Cadastrar</button>
-</form>
-
-<!-- Adicionando máscara no campo de telefone -->
-<script>
-    document.getElementById('telefone').addEventListener('input', function (e) {
-        let input = e.target.value.replace(/\D/g, ''); // Remove tudo que não for número
-        if (input.length > 11) input = input.slice(0, 11); // Limita a 11 dígitos
-        
-        let formatted = input.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3'); // Formata para (XX) XXXXX-XXXX
-        e.target.value = formatted;
-    });
-</script>
-    </section>
-    
-    <!-- Call to Action -->
-    <section id="cta" class="text-center py-8 bg-[#0bbdc3] text-white flex flex-col items-center justify-center w-full">
-        <h2 class="text-3xl font-bold"><a href="http://wa.me/551148632295" class="text-3xl font-bold">Comece sua jornada nutricional agora</a></h2>
-    </section>
-    
-    <!-- Rodapé com Redes Sociais -->
-    <footer class="text-center py-6 bg-gray-800 text-white flex items-center justify-between w-full px-10">
-        <div class="flex items-center space-x-2">
-            <p>Apoio</p>
-            <img src="./icons/logo-PIT-neg.png" alt="Parque de Inovação Tecnológica São José dos Campos" class="w-24">
-        </div>
-        <p class="text-sm">&copy; 2024 Heynutri. Todos os direitos reservados.</p>
-        <div class="flex space-x-6">
-            
-            <a href="http://wa.me/551148632295" class="hover:underline">
-                <img src="./icons/icon-whatsapp.png" alt="Whatsapp" class="w-6 h-6">
-            </a>
-            
-            <a href="https://www.instagram.com/heynutrioficial" class="hover:underline">
-                <img src="./icons/icon-instagram.png" alt="Instagram" class="w-6 h-6">
-            </a>
-            
-            <a href="https://www.linkedin.com/company/heynutri/" class="hover:underline">
-                <img src="./icons/icon-linkedin.png" alt="LinkedIn" class="w-6 h-6">
-            
-            </a>
-                <a href="mailto:contatoheynutri@gmail.com" class="hover:underline">
-                <img src="./icons/icon-email.png" alt="E-mail" class="w-6 h-6">
-            </a>
         </div>
     </footer>
 </body>
