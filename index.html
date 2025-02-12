@@ -18,6 +18,7 @@
 </head>
 <body class="bg-gray-100">
     
+<<<<<<< HEAD
     <!-- Header Responsivo -->
     <header class="bg-[#0bbdc3] py-4 px-4 flex items-center justify-between shadow-md">
         <img src="./logo-heynutri.png" alt="Logo Heynutri" class="w-28 md:w-48">
@@ -34,11 +35,45 @@
         });
     </script>
     
+=======
+ <!-- Header Responsivo -->
+ <header class="bg-[#0bbdc3] py-4 px-6 flex items-center justify-between shadow-md">
+    <img src="./logo-heynutri.png" alt="Logo Heynutri" class="w-20 md:w-40">
+    <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none">☰</button>
+    <nav id="menu" class="hidden md:flex md:space-x-6 text-white font-semibold absolute md:static top-16 right-4 bg-white md:bg-transparent font-semibold shadow-lg md:shadow-none rounded-lg w-48 md:w-auto py-2 md:py-0 flex-col md:flex-row">
+        <a href="#beneficios" class="hover:underline">Benefícios</a>
+        <a href="https://forms.gle/RtUr1LCciy8mggv69" target="_blank" class="hover:underline">Cadastre-se</a>
+        <a href="http://wa.me/551148632295" class="hover:underline">Fale conosco</a>
+    </nav>
+</header>
+<script>
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+        let menu = document.getElementById("menu");
+        if (menu.classList.contains("hidden")) {
+            menu.classList.remove("hidden");
+            menu.classList.add("block");
+        } else {
+            menu.classList.add("hidden");
+            menu.classList.remove("block");
+        }
+    });
+</script>
+<script>
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+        document.getElementById("menu").classList.toggle("hidden");
+    });
+</script>
+
+>>>>>>> 6455923 (Versão responsiva da landing page mobile com atualizações)
     <!-- Hero Responsivo com Imagem e Balão -->
     <section class="relative flex flex-col md:flex-row items-center justify-between py-10 px-6 bg-[#0bbdc3] text-white">
         <div class="md:w-1/2 text-left relative">
             <h1 class="text-3xl md:text-5xl font-open-sans-extra-bold">A saúde começa no prato!</h1>
+<<<<<<< HEAD
                      <p class="mt-4 text-base md:text-xl">Já tentou seguir um plano alimentar e <strong>desistiu em seguida</strong>?</p>
+=======
+            <p class="mt-4 text-base md:text-xl">Já tentou seguir um plano alimentar e <strong>desistiu em seguida</strong>?</p>
+>>>>>>> 6455923 (Versão responsiva da landing page mobile com atualizações)
             <p class="mt-4 text-base md:text-xl">Conecte-se com <strong>nutricionistas especializados</strong> e tenha <strong>acompanhamento diário</strong> para manter uma <strong>nutrição equilibrada</strong>, </strong> <strong>melhorar sua qualidade de vida </strong> e <strong>reduzir sintomas</strong>.</p>
             <a href="http://wa.me/551148632295" class="mt-6 px-5 py-2 bg-white text-[#0bbdc3] font-bold text-lg md:text-xl rounded-full inline-block">Mude sua saúde hoje!</a>
         </div>
@@ -54,7 +89,6 @@
                     <strong>Vamos juntos!</strong>
                 </p>
             </div>
-        </div>
     </section>
     
     <!-- Benefícios Responsivos -->
@@ -66,8 +100,8 @@
                 <p class="text-gray-600 text-sm md:text-base">Se conecte com os melhores especialistas.</p>
             </div>
             <div class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center">
-                <h3 class="text-lg md:text-xl font-semibold">Plano alimentar personalizado</h3>
-                <p class="text-gray-600 text-sm md:text-base">Feito para sua rotina e necessidades.</p>
+                <h3 class="text-lg md:text-xl font-semibold">Plano alimentar personalizado e flexível</h3>
+                <p class="text-gray-600 text-sm md:text-base">Feito para sua rotina e necessidades (metodologia Heynutri).</p>
             </div>
             <div class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center">
                 <h3 class="text-lg md:text-xl font-semibold">Acompanhamento e suporte diário</h3>
@@ -88,9 +122,30 @@
         </div>
     </section>
     
+    <!-- Seção Depoimentos Responsivos -->
+    <section class="py-8 px-4 md:px-8 bg-gray-100">
+        <h2 class="text-2xl md:text-3xl font-bold text-center">O que os últimos pacientes que passaram pela Heynutri dizem</h2>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center flex flex-col items-center">
+                <p class="text-gray-600 italic">"Eu tô feliz, mesmo com as dificuldades eu perdi 3kg. Acho que foi um bom resultado."</p>
+                <p class="mt-4 font-semibold">- Laura V.</p>
+            </div>
+            <div class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center flex flex-col items-center">
+                <p class="text-gray-600 italic">"Cada semana no futebol tenho melhorado minha performance, mas sobre o peso ainda não consegui reduzir."</p>
+                <p class="mt-4 font-semibold">- Emerson S.</p>
+            </div>
+        </div>
+    </section>
+
+            <!-- CTA abaixo dos depoimentos -->
+            <section class="py-8 px-4 md:px-8 bg-[#0bbdc3] text-white text-center">
+                <h2 class="text-2xl md:text-3xl font-bold">Sabia que sintomas como fadiga, inchaço e falta de energia podem estar ligados a uma nutrição inadequada?</h2>
+                <a href="https://forms.gle/RtUr1LCciy8mggv69" target="_blank" class="mt-4 inline-block px-6 py-3 bg-white text-[#0bbdc3] font-bold text-lg md:text-xl rounded-full shadow-md hover:bg-gray-200 transition-all">Dê o primeiro passo para uma vida mais saudável!</a>
+            </section>
+
     <!-- Formulário Responsivo -->
     <section id="formulario" class="py-8 px-4 md:px-8 text-center">
-        <h2 class="text-2xl md:text-3xl font-bold">Cadastre-se para receber novidades</h2>
+        <h2 class="text-2xl md:text-3xl font-bold">Cadastre-se para receber dicas de como melhorar sua qualidade de vida</h2>
         <form action="https://formsubmit.co/contatoheynutri@gmail.com" method="POST" class="mt-6 w-full max-w-lg mx-auto bg-gray-100 p-6 rounded-lg">
             <input type="text" name="nome" placeholder="Nome" required class="w-full p-2 border rounded text-sm md:text-base">
             <input type="email" name="email" placeholder="Email" required class="w-full p-2 border rounded mt-4 text-sm md:text-base">
@@ -99,16 +154,33 @@
         </form>
     </section>
     
-    <!-- Rodapé Responsivo -->
-    <footer class="text-center py-6 bg-gray-800 text-white flex flex-col md:flex-row items-center justify-between px-6">
-        <p class="text-sm md:text-base">&copy; 2024 Heynutri. Todos os direitos reservados.</p>
-        <div class="flex space-x-4 mt-4 md:mt-0">
-            <a href="http://wa.me/551148632295"><img src="./icons/icon-whatsapp.png" class="w-5 md:w-6"></a>
-            <a href="https://www.instagram.com/heynutrioficial"><img src="./icons/icon-instagram.png" class="w-5 md:w-6"></a>
-            <a href="https://www.linkedin.com/company/heynutri/"><img src="./icons/icon-linkedin.png" class="w-5 md:w-6"></a>
-            <a href="mailto:contatoheynutri@gmail.com"><img src="./icons/icon-email.png" class="w-5 md:w-6"></a>
 
-        </div>
-    </footer>
+        <!-- Rodapé -->
+        <footer class="bg-gray-800 text-white py-6">
+            <div class="flex flex-col md:flex-row items-center justify-between w-full px-6">
+                <!-- Apoio e Logo -->
+                <div class="flex items-center space-x-2 text-xs md:text-sm">
+                    <p class="text-sm md:text-base font-family">Apoio</p>
+                    <img src="./icons/logo-PIT-neg.png" alt="Parque de Inovação Tecnológica" class="w-16 md:w-24">
+                </div>
+                <!-- Copyright -->
+                <p class="text-xs md:text-sm mt-4 md:mt-0">&copy; 2024 Heynutri. Todos os direitos reservados.</p>
+                <!-- Redes Sociais -->
+                <div class="flex items-center space-x-6 mt-4 md:mt-0">
+                    <a href="http://wa.me/551148632295" class="hover:underline">
+                        <img src="./icons/icon-whatsapp.png" alt="WhatsApp" class="w-6 h-6">
+                    </a>
+                    <a href="https://www.instagram.com/heynutrioficial" class="hover:underline">
+                        <img src="./icons/icon-instagram.png" alt="Instagram" class="w-6 h-6">
+                    </a>
+                    <a href="https://www.linkedin.com/company/heynutri/" class="hover:underline">
+                        <img src="./icons/icon-linkedin.png" alt="LinkedIn" class="w-6 h-6">
+                    </a>
+                    <a href="mailto:contatoheynutri@gmail.com" class="hover:underline">
+                        <img src="./icons/icon-email.png" alt="E-mail" class="w-6 h-6">
+                    </a>
+                </div>
+            </div>
+        </footer>
 </body>
 </html>
