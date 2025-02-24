@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Heynutri - Transforme sua saúde com atendimento nutricional personalizado e suporte contínuo." />
-    <meta name="keywords" content="nutrição, alimentação saudável, nutricionista online, plano alimentar, dieta personalizada, doenças crônicas, autoimunes, metabólicas, transtornos alimentares, alta performance, atletas" />
-    <meta name="author" content="Heynutri" />
+    <meta name="description" content="Heynutri - Transforme sua saúde com atendimento nutricional personalizado e suporte contínuo.">
+    <meta name="keywords" content="nutrição, alimentação saudável, nutricionista online, plano alimentar, dieta personalizada">
+    <meta name="author" content="Heynutri">
     <title>Heynutri - Nutrição e acompanhamento diário na palma da sua mão</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
@@ -18,104 +18,137 @@
             font-family: 'Raleway', sans-serif;
             font-weight: 700;
         }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
-        .whatsapp-button {
+
+        /* Estilo para menu mobile */
+        .mobile-menu {
             position: fixed;
-            bottom: 23px;
-            right: 15px;
+            top: 0;
+            right: -100%;
+            width: 70%;
+            height: 100vh;
+            background-color: #0bbdc3;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease-in-out;
             z-index: 1000;
+        }
+
+        .mobile-menu.open {
+            right: 0;
+        }
+
+        .menu-item {
+            padding: 10px 20px;
+            display: block;
+            text-align: left;
+            color: white;
+            font-size: 18px;
+        }
+
+        .menu-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: background-color 0.2s ease-in-out;
         }
 
     </style>
 </head>
 <body class="bg-gray-100">
-    
+
     <!-- Header Responsivo -->
-    <header class="bg-[#0bbdc3] py-4 px-6 flex items-center justify-between shadow-md">
-        <!-- Logo -->
+    <header class="bg-[#0bbdc3] py-4 px-6 flex items-center justify-between shadow-md relative">
         <a href="#">
-            <img src="./logo-heynutri.png" alt="Logo Heynutri" class="w-16 md:w-36">
+            <img src="./logo-heynutri.png" alt="Logo Heynutri" class="w-24 md:w-36">
         </a>
-    
- <!-- Botão do menu no mobile -->
-<div class="flex items-center space-x-4">
-    <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">☰</button>
-    
-    <!-- Botão "Cadastre-se" visível apenas no mobile -->
-    <a href="#cadastro" class="md:hidden bg-white text-[#0bbdc3] font-bold px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition-all">
-        Cadastre-se
-    </a>
-</div>
-    
-        <!-- Menu -->
-        <nav id="menu" class="hidden md:flex flex-col md:flex-row items-center md:space-x-6">
-            <a href="#beneficios" class="text-white hover:underline">Benefícios</a>
-            <a href="#cadastro" class="hidden md:block bg-white text-[#0bbdc3] font-bold px-5 py-2 rounded-lg shadow-md hover:bg-gray-200 transition-all">Cadastre-se</a>
-            <a href="#como-funciona" class="text-white hover:underline">Como funciona</a>
-            <a href="#sobre-nos" class="text-white hover:underline">Para empresas</a>
-            <a href="#sobre-nos" class="text-white hover:underline">Sobre nós</a>
-            <a href="http://wa.me/551148632295" class="text-white hover:underline">Fale conosco</a>
+
+        <div class="flex items-center space-x-4">
+            <!-- Botão Mobile -->
+            <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">☰</button>
+            <a href="#cadastro" class="md:hidden bg-white text-[#0bbdc3] font-bold px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition-all">
+                Cadastre-se
+            </a>
+        </div>
+
+        <!-- Menu Desktop Ajustado -->
+        <nav class="hidden md:flex items-center space-x-6">
+            <a href="#beneficios" class="text-white hover:text-gray-300 transition-all">Benefícios</a>
+            <a href="#como-funciona" class="text-white hover:text-gray-300 transition-all">Como funciona</a>
+            <a href="#empresas" class="text-white hover:text-gray-300 transition-all">Para empresas</a>
+            <a href="#sobre-nos" class="text-white hover:text-gray-300 transition-all">Sobre nós</a>
+            <a href="http://wa.me/551148632295" class="text-white hover:text-gray-300 transition-all">Fale conosco</a>
+
+            <!-- Botão "Cadastre-se" alinhado corretamente -->
+            <a href="#cadastro" 
+                class="bg-white text-[#0bbdc3] font-bold px-5 py-2 ml-4 rounded-lg shadow-md hover:bg-gray-200 transition-all flex items-center">
+                Cadastre-se
+            </a>
         </nav>
+
+        <!-- Linha Branca Suave -->
+        <div class="absolute bottom-0 left-0 w-full h-[1px] bg-white opacity-50"></div>
     </header>
-    
-    <!-- Script para abrir/fechar o menu no mobile -->
-    <script>
-        document.getElementById("menu-toggle").addEventListener("click", function () {
-            document.getElementById("menu").classList.toggle("hidden");
-        });
-    </script>
-    
-<!-- Hero Responsivo com Imagem Maior e Linha Fina -->
-<section class="relative flex flex-col md:flex-row items-center justify-between py-12 px-6 bg-[#0bbdc3] text-white">
 
-    <!-- Linha Branca mais fina para separar o menu -->
-    <div class="absolute top-0 left-0 w-full h-[0.5px] bg-white opacity-50"></div>
-
-    <!-- Texto à esquerda -->
-    <div class="md:w-1/2 text-left max-w-2xl mx-auto md:pl-10">
-        <h1 class="text-4xl md:text-6xl font-open-sans-extra-bold leading-tight">
-            A saúde começa no prato!
-        </h1>
-        <p class="mt-4 text-base md:text-xl">
-            Já tentou seguir um plano alimentar e <strong>desistiu em seguida</strong>?
-        </p>
-        <p class="mt-4 text-base md:text-xl">
-            Acesse <strong> um nutricionista especializado</strong> e receba 
-            <strong>acompanhamento diário</strong> pelo tempo que precisar para manter uma 
-            <strong>alimentação equilibrada</strong>, <strong>melhorar sua qualidade de vida</strong> e 
-            <strong>reduzir sintomas</strong> de doenças crônicas, autoimunes, metabólicas e inflamatórias.
-        </p>
-        <a href="http://wa.me/551148632295" 
-        class="mt-6 px-6 py-3 bg-white text-[#0bbdc3] font-bold text-lg md:text-xl rounded-lg inline-block shadow-md hover:bg-gray-200 transition-all">
-        Mude sua saúde hoje!
-     </a>
-     
+    <!-- Menu Mobile (deslizante da direita) -->
+    <div id="mobile-menu" class="fixed top-0 right-[-100%] w-3/4 h-full bg-[#0bbdc3] p-6 flex flex-col space-y-6 text-white text-lg transition-all duration-300 shadow-lg">
+        <button id="close-menu" class="text-3xl self-end">✕</button>
+        <a href="#beneficios" class="menu-item hover:text-gray-300 transition-all">Benefícios</a>
+        <a href="#cadastro" class="menu-item hover:text-gray-300 transition-all">Cadastre-se</a>
+        <a href="#como-funciona" class="menu-item hover:text-gray-300 transition-all">Como funciona</a>
+        <a href="#empresas" class="menu-item hover:text-gray-300 transition-all">Para empresas</a>
+        <a href="#sobre-nos" class="menu-item hover:text-gray-300 transition-all">Sobre nós</a>
+        <a href="http://wa.me/551148632295" class="menu-item hover:text-gray-300 transition-all">Fale conosco</a>
     </div>
 
-    <!-- Imagem maior e bem posicionada -->
-    <div class="md:w-1/2 flex justify-end mt-8 md:mt-0 pr-6">
-        <div class="relative w-full max-w-md md:max-w-xl"> <!-- Aumentei o tamanho -->
-            <img src="./paciente-feliz.png" alt="Paciente feliz após acompanhamento nutricional" class="w-full rounded-lg shadow-lg">
+    <!-- Script para abrir/fechar o menu mobile -->
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function () {
+            document.getElementById("mobile-menu").style.right = "0";
+        });
 
-            <!-- Balão de Notificação Heynutri -->
-            <div class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 bg-white text-[#000000] p-3 rounded-lg shadow-md w-60 md:w-80 text-xs flex items-start space-x-2 backdrop-blur-md bg-opacity-60">
-                <img src="./logo-heynutri-col.png" alt="Logo Heynutri" class="w-14 h-14">
-                <div>
-                    <p class="font-bold">Isso aí, Fernando!</p>
-                    <p class="leading-tight">
-                        Ajustarei hoje seu plano para compensar a pizza do almoço e seguirmos com o seu objetivo! 
-                        <strong>Vamos juntos!</strong>
-                    </p>
+        document.getElementById("close-menu").addEventListener("click", function () {
+            document.getElementById("mobile-menu").style.right = "-100%";
+        });
+    </script>
+
+
+    <!-- Seção Hero -->
+    <section class="relative flex flex-col md:flex-row items-center justify-between py-12 px-6 bg-[#0bbdc3] text-white">
+        <div class="md:w-1/2 text-left max-w-2xl mx-auto md:pl-10">
+            <h1 class="text-4xl md:text-6xl font-open-sans-extra-bold leading-tight">
+                A saúde começa no prato!
+            </h1>
+            <p class="mt-4 text-base md:text-xl">
+                Já tentou seguir um plano alimentar e <strong>desistiu em seguida</strong>?
+            </p>
+            <p class="mt-4 text-base md:text-xl">
+                Acesse <strong> um nutricionista especializado</strong> e receba 
+                <strong>acompanhamento diário</strong> pelo tempo que precisar para manter uma 
+                <strong>alimentação equilibrada</strong>, <strong>melhorar sua qualidade de vida</strong> e 
+                <strong>reduzir sintomas</strong> de doenças crônicas, autoimunes, metabólicas e inflamatórias.
+            </p>
+            <a href="http://wa.me/551148632295" 
+            class="mt-6 px-6 py-3 bg-white text-[#0bbdc3] font-bold text-lg md:text-xl rounded-lg inline-block shadow-md hover:bg-gray-200 transition-all">
+            Mude sua saúde hoje!
+         </a>
+        </div>
+
+        <!-- Imagem com balão ajustado -->
+        <div class="md:w-1/2 flex justify-end mt-8 md:mt-0 pr-6">
+            <div class="relative w-full max-w-md md:max-w-xl">
+                <img src="./paciente-feliz.png" alt="Paciente feliz após acompanhamento nutricional" class="w-full rounded-lg shadow-lg">
+
+                <!-- Balão de Notificação ajustado -->
+                <div class="absolute bottom-2 md:bottom-6 left-1/2 transform -translate-x-1/2 bg-white text-[#000000] p-3 rounded-lg shadow-md w-56 md:w-72 text-xs flex items-start space-x-2 backdrop-blur-md bg-opacity-60">
+                    <img src="./logo-heynutri-col.png" alt="Logo Heynutri" class="w-12 h-12">
+                    <div>
+                        <p class="font-bold">Isso aí, Fernando!</p>
+                        <p class="leading-tight">
+                            Ajustarei hoje seu plano para compensar a pizza do almoço e seguirmos com o seu objetivo! 
+                            <strong>Vamos juntos!</strong>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-</section>
+    </section>
 
 
     
@@ -164,27 +197,61 @@
                 <h2 class="text-2xl md:text-3xl font-bold">Sabia que sintomas como fadiga, inchaço e falta de energia podem estar ligados a uma nutrição inadequada?</h2>
             </section>
 
-<!-- Formulário Responsivo de Cadastro -->
+<!-- Seção de Cadastro -->
 <section id="cadastro" class="py-8 px-4 md:px-8 text-center">
     <h2 class="text-2xl md:text-3xl text-[#0bbdc3] font-bold">Cadastre-se agora e transforme sua alimentação e saúde</h2>
-    <form action="https://formsubmit.co/contato@heynutri.com.br" method="POST" class="mt-6 w-full max-w-lg mx-auto bg-gray-100 p-6 rounded-lg">
-        
-        <!-- Removendo reCAPTCHA -->
-        <input type="hidden" name="_captcha" value="false">
-        
-        <input type="text" name="nome" placeholder="Nome e sobrenome" required class="w-full p-2 border rounded text-sm md:text-base">
-        <input type="email" name="email" placeholder="E-mail" required class="w-full p-2 border rounded mt-4 text-sm md:text-base">
-        
-        <!-- Input de Telefone sem label, apenas com placeholder -->
-        <input type="tel" name="telefone" id="telefone" placeholder="Telefone (com DDD)" required 
-            pattern="\(\d{2}\) \d{5}-\d{4}" 
-            class="w-full p-2 border rounded mt-4 text-sm md:text-base">
-        
-        <button type="submit" class="w-full bg-[#0bbdc3] text-white py-2 px-4 rounded-lg font-bold hover:bg-[#099da3] mt-4 text-sm md:text-base">
-            Cadastrar
-        </button>
-    </form>
+    
+    <!-- Formulário e Mensagem de Agradecimento -->
+    <div id="form-container">
+        <form id="cadastro-form" action="https://formsubmit.co/contato@heynutri.com.br" method="POST" class="mt-6 w-full max-w-lg mx-auto bg-gray-100 p-6 rounded-lg">
+            
+            <!-- Removendo reCAPTCHA -->
+            <input type="hidden" name="_captcha" value="false">
+            
+            <!-- Ativar resposta automática para o email do usuário -->
+            <input type="hidden" name="_replyto" value="">
+
+            <!-- Definir o assunto do e-mail -->
+            <input type="hidden" name="_subject" value="Sua jornada para uma alimentação equilibrada começa agora!"">
+
+            <input type="text" name="nome" placeholder="Nome e sobrenome" required class="w-full p-2 border rounded text-sm md:text-base">
+            
+            <input type="email" name="email" placeholder="E-mail" required class="w-full p-2 border rounded mt-4 text-sm md:text-base">
+
+            <input type="tel" name="telefone" id="telefone" placeholder="Telefone (com DDD)" required 
+                pattern="\(\d{2}\) \d{5}-\d{4}" 
+                class="w-full p-2 border rounded mt-4 text-sm md:text-base">
+            
+            <button type="submit" class="w-full bg-[#0bbdc3] text-white py-2 px-4 rounded-lg font-bold hover:bg-[#099da3] mt-4 text-sm md:text-base">
+                Cadastrar
+            </button>
+        </form>
+    </div>
+
+    <!-- Mensagem de agradecimento oculta -->
+    <div id="mensagem-obrigado" class="hidden mt-6 text-lg text-[#0bbdc3] font-bold">
+        Obrigado! Entraremos em contato em breve! 😊
+    </div>
 </section>
+
+<!-- JavaScript para ocultar o formulário e exibir a mensagem -->
+<script>
+    document.getElementById("cadastro-form").addEventListener("submit", function(event){
+        event.preventDefault(); // Evita o recarregamento da página
+
+        // Enviar formulário manualmente
+        fetch(this.action, {
+            method: "POST",
+            body: new FormData(this)
+        }).then(response => {
+            // Esconder o formulário e exibir a mensagem de agradecimento
+            document.getElementById("form-container").style.display = "none";
+            document.getElementById("mensagem-obrigado").classList.remove("hidden");
+        }).catch(error => console.error("Erro ao enviar o formulário:", error));
+    });
+</script>
+
+
 
 <!-- Script para Formatar o Telefone -->
 <script>
