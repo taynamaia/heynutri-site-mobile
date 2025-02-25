@@ -105,6 +105,12 @@
 <!-- Menu Mobile (Desliza da Direita) -->
 <div id="mobile-menu" class="mobile-menu">
     <button id="close-menu" class="text-3xl self-end absolute top-4 right-4">✕</button>
+
+       <!-- Botão Cadastre-se no topo do menu -->
+       <a href="#cadastro" class="menu-item bg-white text-[#0bbdc3] font-bold px-4 py-2 rounded-lg shadow-md text-center hover:bg-gray-200 transition-all">
+        Cadastre-se
+    </a>
+
     <a href="#beneficios" class="menu-item">Benefícios</a>
     <a href="#como-funciona" class="menu-item">Como funciona</a>
     <a href="#empresas" class="menu-item">Para empresas</a>
@@ -450,6 +456,43 @@
 </section>
 
 
+<!-- Botão Voltar ao Topo-->
+<button id="back-to-top" class="hidden fixed bottom-16 right-6 bg-[#0bbdc3] text-white p-3 rounded-full shadow-md hover:bg-[#099da3] transition-all">
+    ↑
+</button>
+
+<style>
+    #back-to-top {
+        display: none; /* Começa oculto */
+        position: fixed;
+        bottom: 70px; /* Acima do botão do WhatsApp */
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 999;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+        #back-to-top {
+            bottom: 80px; /* Ajuste no mobile para não sobrepor o botão do WhatsApp */
+            right: 15px;
+            width: 45px;
+            height: 45px;
+            font-size: 18px;
+            line-height: 45px;
+        }
+    }
+</style>
+
+
+
  <!-- Botão do WhatsApp -->
 <a href="http://wa.me/551148632295" target="_blank" class="whatsapp-button">
     <img src="./icons/icon-whatsapp col.png" alt="WhatsApp">
@@ -463,18 +506,19 @@
         z-index: 1000;
         background-color: transparent;
         border-radius: 50%;
-        padding: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        width: 60px; /* Define o tamanho fixo */
-        height: 60px;
+        padding: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.027);
+        width: 50px; /* Define o tamanho fixo */
+        height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
     .whatsapp-button img {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
     }
 
     @media (max-width: 768px) {
@@ -486,11 +530,32 @@
         }
 
         .whatsapp-button img {
-            width: 35px;
-            height: 35px;
+            width: 40px;
+            height: 40px;
         }
     }
 </style>
+
+<!-- Script JavaScript para mostrar/ocultar o botão de topo -->
+<script>
+    const backToTopButton = document.getElementById("back-to-top");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 400) { // Exibe o botão quando rolar mais de 400px
+            backToTopButton.classList.remove("hidden");
+        } else {
+            backToTopButton.classList.add("hidden");
+        }
+    });
+
+    backToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+</script>
+
 
 <!-- Seção de Contato via WhatsApp -->
 <section class="bg-gray-100 text-black text-center py-6">
