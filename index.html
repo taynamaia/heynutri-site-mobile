@@ -53,60 +53,63 @@
 </head>
 <body class="bg-gray-100">
 
-    <!-- Header Responsivo -->
-    <header class="bg-[#0bbdc3] py-4 px-6 flex items-center justify-between shadow-md relative">
-        <a href="#">
-            <img src="./logo-heynutri.png" alt="Logo Heynutri" class="w-24 md:w-36">
+<!-- Header Responsivo -->
+<header class="bg-[#0bbdc3] py-4 px-6 flex items-center justify-between shadow-md relative">
+    <a href="#">
+        <img src="./logo-heynutri.png" alt="Logo Heynutri" class="w-24 md:w-36">
+    </a>
+
+    <div class="flex items-center space-x-4">
+        <!-- Botão Mobile -->
+        <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">☰</button>
+        <a href="#cadastro" class="md:hidden bg-white text-[#0bbdc3] font-bold px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition-all">
+            Cadastre-se
         </a>
-
-        <div class="flex items-center space-x-4">
-            <!-- Botão Mobile -->
-            <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">☰</button>
-            <a href="#cadastro" class="md:hidden bg-white text-[#0bbdc3] font-bold px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition-all">
-                Cadastre-se
-            </a>
-        </div>
-
-        <!-- Menu Desktop Ajustado -->
-        <nav class="hidden md:flex items-center space-x-6">
-            <a href="#beneficios" class="text-white hover:text-gray-300 transition-all">Benefícios</a>
-            <a href="#como-funciona" class="text-white hover:text-gray-300 transition-all">Como funciona</a>
-            <a href="#empresas" class="text-white hover:text-gray-300 transition-all">Para empresas</a>
-            <a href="#sobre-nos" class="text-white hover:text-gray-300 transition-all">Sobre nós</a>
-            <a href="http://wa.me/551148632295" class="text-white hover:text-gray-300 transition-all">Fale conosco</a>
-
-            <!-- Botão "Cadastre-se" alinhado corretamente -->
-            <a href="#cadastro" 
-                class="bg-white text-[#0bbdc3] font-bold px-5 py-2 ml-4 rounded-lg shadow-md hover:bg-gray-200 transition-all flex items-center">
-                Cadastre-se
-            </a>
-        </nav>
-
-        <!-- Linha Branca Suave -->
-        <div class="absolute bottom-0 left-0 w-full h-[1px] bg-white opacity-50"></div>
-    </header>
-
-    <!-- Menu Mobile (deslizante da direita) -->
-    <div id="mobile-menu" class="fixed top-0 right-[-100%] w-3/4 h-full bg-[#0bbdc3] p-6 flex flex-col space-y-6 text-white text-lg transition-all duration-300 shadow-lg">
-        <button id="close-menu" class="text-3xl self-end">✕</button>
-        <a href="#beneficios" class="menu-item hover:text-gray-300 transition-all">Benefícios</a>
-        <a href="#cadastro" class="menu-item hover:text-gray-300 transition-all">Cadastre-se</a>
-        <a href="#como-funciona" class="menu-item hover:text-gray-300 transition-all">Como funciona</a>
-        <a href="#empresas" class="menu-item hover:text-gray-300 transition-all">Para empresas</a>
-        <a href="#sobre-nos" class="menu-item hover:text-gray-300 transition-all">Sobre nós</a>
-        <a href="http://wa.me/551148632295" class="menu-item hover:text-gray-300 transition-all">Fale conosco</a>
     </div>
 
-    <!-- Script para abrir/fechar o menu mobile -->
-    <script>
-        document.getElementById("menu-toggle").addEventListener("click", function () {
-            document.getElementById("mobile-menu").style.right = "0";
-        });
+    <!-- Menu Desktop Ajustado -->
+    <nav class="hidden md:flex items-center space-x-6">
+        <a href="#beneficios" class="text-white hover:text-gray-300 transition-all">Benefícios</a>
+        <a href="#como-funciona" class="text-white hover:text-gray-300 transition-all">Como funciona</a>
+        <a href="#empresas" class="text-white hover:text-gray-300 transition-all">Para empresas</a>
+        <a href="#sobre-nos" class="text-white hover:text-gray-300 transition-all">Sobre nós</a>
+        <a href="http://wa.me/551148632295" class="text-white hover:text-gray-300 transition-all">Fale conosco</a>
 
-        document.getElementById("close-menu").addEventListener("click", function () {
-            document.getElementById("mobile-menu").style.right = "-100%";
-        });
-    </script>
+        <!-- Botão "Cadastre-se" alinhado corretamente -->
+        <a href="#cadastro" 
+            class="bg-white text-[#0bbdc3] font-bold px-5 py-2 ml-4 rounded-lg shadow-md hover:bg-gray-200 transition-all flex items-center">
+            Cadastre-se
+        </a>
+    </nav>
+
+    <!-- Linha Branca Suave -->
+    <div class="absolute bottom-0 left-0 w-full h-[1px] bg-white opacity-50"></div>
+</header>
+
+<!-- Menu Mobile (deslizante da direita) -->
+<div id="mobile-menu" class="fixed top-0 right-[-100%] w-3/4 h-full bg-[#0bbdc3] p-6 flex flex-col space-y-6 text-white text-lg transition-all duration-300 ease-in-out shadow-lg">
+    <button id="close-menu" class="text-3xl self-end">✕</button>
+    <a href="#beneficios" class="menu-item hover:text-gray-300 transition-all">Benefícios</a>
+    <a href="#cadastro" class="menu-item hover:text-gray-300 transition-all">Cadastre-se</a>
+    <a href="#como-funciona" class="menu-item hover:text-gray-300 transition-all">Como funciona</a>
+    <a href="#empresas" class="menu-item hover:text-gray-300 transition-all">Para empresas</a>
+    <a href="#sobre-nos" class="menu-item hover:text-gray-300 transition-all">Sobre nós</a>
+    <a href="http://wa.me/551148632295" class="menu-item hover:text-gray-300 transition-all">Fale conosco</a>
+</div>
+
+<!-- Script para abrir/fechar o menu mobile -->
+<script>
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+        document.getElementById("mobile-menu").style.right = "0";
+        document.getElementById("mobile-menu").style.boxShadow = "-4px 0 10px rgba(0, 0, 0, 0.3)";
+    });
+
+    document.getElementById("close-menu").addEventListener("click", function () {
+        document.getElementById("mobile-menu").style.right = "-100%";
+        document.getElementById("mobile-menu").style.boxShadow = "none";
+    });
+</script>
+
 
 
     <!-- Seção Hero -->
@@ -426,11 +429,47 @@
 </section>
 
 
-     <!-- Botão do WhatsApp -->
-     <a href="http://wa.me/551148632295" target="_blank" class="whatsapp-button">
-        <img src="./icons/icon-whatsapp col.png" alt="WhatsApp" class="w-9 md:w-9">
-    </a>
+ <!-- Botão do WhatsApp -->
+<a href="http://wa.me/551148632295" target="_blank" class="whatsapp-button">
+    <img src="./icons/icon-whatsapp col.png" alt="WhatsApp">
+</a>
 
+<style>
+    .whatsapp-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        background-color: transparent;
+        border-radius: 50%;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 60px; /* Define o tamanho fixo */
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .whatsapp-button img {
+        width: 40px;
+        height: 40px;
+    }
+
+    @media (max-width: 768px) {
+        .whatsapp-button {
+            width: 50px;
+            height: 50px;
+            bottom: 15px;
+            right: 15px;
+        }
+
+        .whatsapp-button img {
+            width: 35px;
+            height: 35px;
+        }
+    }
+</style>
 
 <!-- Seção de Contato via WhatsApp -->
 <section class="bg-gray-100 text-black text-center py-6">
@@ -441,11 +480,12 @@
 
 <!-- Rodapé -->
 <footer class="bg-gray-800 text-white py-6 mt-8">
-    <div class="container flex flex-col md:flex-row justify-between">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center md:items-start">
+        
         <!-- Logo Heynutri e Redes Sociais -->
-        <div class="w-1/3 flex flex-col items-start">
-            <img src="./icons/logo-heynutri-rodape.png" alt="Logo Heynutri" class="w-24">
-            <p class="mt-2 max-w-xs">Transformando a saúde através de uma alimentação flexível e prática, com suporte contínuo.</p>
+        <div class="w-full md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left">
+            <img src="./icons/logo-heynutri-rodape.png" alt="Logo Heynutri" class="w-24 mb-2">
+            <p class="max-w-xs text-sm">Transformando a saúde através de uma alimentação flexível e prática, com suporte contínuo.</p>
             <div class="flex space-x-4 mt-4">
                 <a href="https://www.instagram.com/heynutrioficial">
                     <img src="./icons/icon-instagram.png" alt="Instagram" class="w-6 h-6">
@@ -462,29 +502,31 @@
             </div>
         </div>
 
-        <!-- Apoio PIT e Nexus Digital Centralizado -->
-        <div class="w-1/3 flex flex-col items-center">
+        <!-- Apoio PIT e Nexus Digital -->
+        <div class="w-full md:w-1/3 flex flex-col items-center text-center mt-6 md:mt-0">
             <p class="text-sm">Apoio:</p>
             <div class="flex justify-center space-x-4 mt-2">
-                <img src="./icons/logo-PIT-neg.png" alt="Parque de Inovação Tecnológica e Nexus Digital" class="w-20 md:w-24">
-                <img src="./icons/logo-PIT-nexus.png" alt="Parque de Inovação Tecnológica e Nexus Digital" class="w-20 md:w-24">
+                <img src="./icons/logo-PIT-neg.png" alt="Parque de Inovação Tecnológica" class="w-20 md:w-24">
+                <img src="./icons/logo-PIT-nexus.png" alt="Nexus Digital" class="w-20 md:w-24">
             </div>
-            <p class="mt-14 text-xs md:text-sm">&copy; 2024 Heynutri. Todos os direitos reservados.</p>
+            <p class="mt-6 text-xs md:text-sm">&copy; 2024 Heynutri. Todos os direitos reservados.</p>
         </div>
 
-        <!-- Links de navegação alinhados à direita -->
-        <nav class="w-1/3 flex flex-col items-end">
-            <ul class="text-left">
-                <li><a href="#menu">Home</a></li>
-                <li><a href="#beneficios">Benefícios</a></li>
-                <li><a href="#como-funciona">Como funciona</a></li>
-                <li><a href="#sobre-nos">Sobre nós</a></li>
-                <li><a href="#faq">Perguntas frequentes</a></li>
-                <li><a href="politica.pdf" target="_blank">Política de privacidade</a></li>
+        <!-- Links de navegação -->
+        <nav class="w-full md:w-1/3 flex flex-col items-center md:items-end text-center md:text-right mt-6 md:mt-0">
+            <ul class="space-y-1 text-sm">
+                <li><a href="#menu" class="hover:text-[#0bbdc3] transition-all">Home</a></li>
+                <li><a href="#beneficios" class="hover:text-[#0bbdc3] transition-all">Benefícios</a></li>
+                <li><a href="#como-funciona" class="hover:text-[#0bbdc3] transition-all">Como funciona</a></li>
+                <li><a href="#sobre-nos" class="hover:text-[#0bbdc3] transition-all">Sobre nós</a></li>
+                <li><a href="#faq" class="hover:text-[#0bbdc3] transition-all">Perguntas frequentes</a></li>
+                <li><a href="politica.pdf" target="_blank" class="hover:text-[#0bbdc3] transition-all">Política de privacidade</a></li>
             </ul>
         </nav>
     </div>
 </footer>
+
+
 
 
 
