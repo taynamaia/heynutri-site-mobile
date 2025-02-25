@@ -21,33 +21,34 @@
 
         /* Estilo para menu mobile */
         .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 70%;
-            height: 100vh;
-            background-color: #0bbdc3;
-            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-            transition: right 0.3s ease-in-out;
-            z-index: 1000;
-        }
-
-        .mobile-menu.open {
-            right: 0;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: #0bbdc3;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
         }
 
         .menu-item {
-            padding: 10px 20px;
-            display: block;
-            text-align: left;
             color: white;
             font-size: 18px;
+            padding: 12px 0;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         .menu-item:hover {
             background-color: rgba(255, 255, 255, 0.2);
             transition: background-color 0.2s ease-in-out;
         }
+
 
     </style>
 </head>
@@ -86,29 +87,30 @@
     <div class="absolute bottom-0 left-0 w-full h-[1px] bg-white opacity-50"></div>
 </header>
 
-<!-- Menu Mobile (deslizante da direita) -->
-<div id="mobile-menu" class="fixed top-0 right-[-100%] w-3/4 h-full bg-[#0bbdc3] p-6 flex flex-col space-y-6 text-white text-lg transition-all duration-300 ease-in-out shadow-lg">
-    <button id="close-menu" class="text-3xl self-end">✕</button>
-    <a href="#beneficios" class="menu-item hover:text-gray-300 transition-all">Benefícios</a>
-    <a href="#cadastro" class="menu-item hover:text-gray-300 transition-all">Cadastre-se</a>
-    <a href="#como-funciona" class="menu-item hover:text-gray-300 transition-all">Como funciona</a>
-    <a href="#empresas" class="menu-item hover:text-gray-300 transition-all">Para empresas</a>
-    <a href="#sobre-nos" class="menu-item hover:text-gray-300 transition-all">Sobre nós</a>
-    <a href="http://wa.me/551148632295" class="menu-item hover:text-gray-300 transition-all">Fale conosco</a>
+<!-- Menu Mobile (Desliza da Direita) -->
+<div id="mobile-menu" class="mobile-menu">
+    <button id="close-menu" class="text-3xl self-end absolute top-4 right-4">✕</button>
+    <a href="#beneficios" class="menu-item">Benefícios</a>
+    <a href="#cadastro" class="menu-item">Cadastre-se</a>
+    <a href="#como-funciona" class="menu-item">Como funciona</a>
+    <a href="#empresas" class="menu-item">Para empresas</a>
+    <a href="#sobre-nos" class="menu-item">Sobre nós</a>
+    <a href="http://wa.me/551148632295" class="menu-item">Fale conosco</a>
 </div>
+
+
 
 <!-- Script para abrir/fechar o menu mobile -->
 <script>
     document.getElementById("menu-toggle").addEventListener("click", function () {
-        document.getElementById("mobile-menu").style.right = "0";
-        document.getElementById("mobile-menu").style.boxShadow = "-4px 0 10px rgba(0, 0, 0, 0.3)";
+        document.getElementById("mobile-menu").classList.add("open");
     });
 
     document.getElementById("close-menu").addEventListener("click", function () {
-        document.getElementById("mobile-menu").style.right = "-100%";
-        document.getElementById("mobile-menu").style.boxShadow = "none";
+        document.getElementById("mobile-menu").classList.remove("open");
     });
 </script>
+
 
 
 
@@ -139,12 +141,12 @@
                 <img src="./paciente-feliz.png" alt="Paciente feliz após acompanhamento nutricional" class="w-full rounded-lg shadow-lg">
 
                 <!-- Balão de Notificação ajustado -->
-                <div class="absolute bottom-2 md:bottom-6 left-1/2 transform -translate-x-1/2 bg-white text-[#000000] p-3 rounded-lg shadow-md w-56 md:w-72 text-xs flex items-start space-x-2 backdrop-blur-md bg-opacity-60">
+                <div class="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-[#000000] p-3 rounded-lg shadow-md w-56 md:w-72 text-xs flex items-start space-x-2 backdrop-blur-md bg-opacity-55">
                     <img src="./logo-heynutri-col.png" alt="Logo Heynutri" class="w-12 h-12">
                     <div>
                         <p class="font-bold">Isso aí, Fernando!</p>
                         <p class="leading-tight">
-                            Ajustarei hoje seu plano para compensar a pizza do almoço e seguirmos com o seu objetivo! 
+                            Ajustarei seu plano para compensar a pizza do jantar e seguirmos com o seu objetivo! 
                             <strong>Vamos juntos!</strong>
                         </p>
                     </div>
