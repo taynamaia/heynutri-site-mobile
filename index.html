@@ -73,12 +73,15 @@
     </a>
 
     <div class="flex items-center space-x-4">
-        <!-- Botão Mobile -->
-        <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">☰</button>
+
+    <!-- Botão Mobile -->
+    <div class="flex items-center space-x-4">
         <a href="#cadastro" class="md:hidden bg-white text-[#0bbdc3] font-bold px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition-all">
             Cadastre-se
         </a>
+        <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">☰</button>
     </div>
+
 
     <!-- Menu Desktop Ajustado -->
     <nav class="hidden md:flex items-center space-x-6">
@@ -100,10 +103,9 @@
 </header>
 
 <!-- Menu Mobile (Desliza da Direita) -->
-<div id="mobile-menu" class="mobile-menu hidden">
+<div id="mobile-menu" class="mobile-menu">
     <button id="close-menu" class="text-3xl self-end absolute top-4 right-4">✕</button>
     <a href="#beneficios" class="menu-item">Benefícios</a>
-    <a href="#cadastro" class="menu-item">Cadastre-se</a>
     <a href="#como-funciona" class="menu-item">Como funciona</a>
     <a href="#empresas" class="menu-item">Para empresas</a>
     <a href="#sobre-nos" class="menu-item">Sobre nós</a>
@@ -111,24 +113,21 @@
 </div>
 
 
-<!-- Script para abrir/fechar o menu mobile -->
+<!-- Script para abrir/fechar o menu mobile e fechar ao clicar em um link -->
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const menuToggle = document.getElementById("menu-toggle");
-        const closeMenu = document.getElementById("close-menu");
-        const mobileMenu = document.getElementById("mobile-menu");
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+        document.getElementById("mobile-menu").classList.add("open");
+    });
 
-        if (menuToggle && closeMenu && mobileMenu) {
-            menuToggle.addEventListener("click", function () {
-                mobileMenu.classList.toggle("open");
-                mobileMenu.classList.toggle("hidden");
-            });
+    document.getElementById("close-menu").addEventListener("click", function () {
+        document.getElementById("mobile-menu").classList.remove("open");
+    });
 
-            closeMenu.addEventListener("click", function () {
-                mobileMenu.classList.remove("open");
-                mobileMenu.classList.add("hidden");
-            });
-        }
+    // Fecha o menu quando um item for clicado
+    document.querySelectorAll("#mobile-menu .menu-item").forEach(item => {
+        item.addEventListener("click", function () {
+            document.getElementById("mobile-menu").classList.remove("open");
+        });
     });
 </script>
 
