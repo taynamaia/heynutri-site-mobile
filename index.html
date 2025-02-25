@@ -19,8 +19,8 @@
             font-weight: 700;
         }
 
-        /* Estilo para menu mobile */
-        .mobile-menu {
+  /* Estilo para menu mobile */
+.mobile-menu {
     position: fixed;
     top: 0;
     right: -100%;
@@ -32,22 +32,34 @@
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-        }
+    justify-content: center;
+}
 
-        .menu-item {
-            color: white;
-            font-size: 18px;
-            padding: 12px 0;
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* Classe para exibir o menu */
+.mobile-menu.open {
+    right: 0;
+}
 
-        .menu-item:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            transition: background-color 0.2s ease-in-out;
-        }
+/* Classe para ocultar o menu */
+.hidden {
+    display: none;
+}
+
+/* Estilo dos itens do menu */
+.menu-item {
+    padding: 15px 20px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.2s ease-in-out;
+}
 
 
     </style>
@@ -88,7 +100,7 @@
 </header>
 
 <!-- Menu Mobile (Desliza da Direita) -->
-<div id="mobile-menu" class="mobile-menu">
+<div id="mobile-menu" class="mobile-menu hidden">
     <button id="close-menu" class="text-3xl self-end absolute top-4 right-4">✕</button>
     <a href="#beneficios" class="menu-item">Benefícios</a>
     <a href="#cadastro" class="menu-item">Cadastre-se</a>
@@ -99,18 +111,26 @@
 </div>
 
 
-
 <!-- Script para abrir/fechar o menu mobile -->
 <script>
-    document.getElementById("menu-toggle").addEventListener("click", function () {
-        document.getElementById("mobile-menu").classList.add("open");
-    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const closeMenu = document.getElementById("close-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
 
-    document.getElementById("close-menu").addEventListener("click", function () {
-        document.getElementById("mobile-menu").classList.remove("open");
+        if (menuToggle && closeMenu && mobileMenu) {
+            menuToggle.addEventListener("click", function () {
+                mobileMenu.classList.toggle("open");
+                mobileMenu.classList.toggle("hidden");
+            });
+
+            closeMenu.addEventListener("click", function () {
+                mobileMenu.classList.remove("open");
+                mobileMenu.classList.add("hidden");
+            });
+        }
     });
 </script>
-
 
 
 
