@@ -829,29 +829,33 @@
             }
         });
 
-        // 🚀 Novo código para envio e redirecionamento
-        document.getElementById("ebook-form").addEventListener("submit", function (event) {
-            event.preventDefault();  // Evita que a página recarregue
-            const form = this;
-            const formData = new FormData(form);
+     // 🚀 Novo código para envio e redirecionamento
+document.getElementById("ebook-form").addEventListener("submit", function (event) {
+    event.preventDefault();  // Evita que a página recarregue
+    const form = this;
+    const formData = new FormData(form);
 
-            fetch(form.action, {
-                method: "POST",
-                body: formData
-            })
-            .then(response => {
-                if (response.ok) {
-                    window.location.href = "https://heynutri.com.br/ebook-foco-energia.pdf"; 
-                } else {
-                    alert("Ocorreu um erro ao enviar o formulário. Tente novamente.");
-                }
-            })
-            .catch(error => {
-                console.error("Erro ao enviar o formulário:", error);
-                alert("Houve um problema! Verifique sua conexão e tente novamente.");
-            });
-        });
+    // Adiciona o campo para definir o assunto do e-mail recebido
+    formData.append("_subject", "Download eBook 5 Dicas de Ouro: Foco, Energia e Disposição");
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            // Redireciona para o link do eBook após o envio do formulário
+            window.location.href = "https://www.heynutri.com.br/ebook-foco-energia.pdf"; 
+        } else {
+            alert("Ocorreu um erro ao enviar o formulário. Tente novamente.");
+        }
+    })
+    .catch(error => {
+        console.error("Erro ao enviar o formulário:", error);
+        alert("Houve um problema! Verifique sua conexão e tente novamente.");
     });
+});
+
 </script>
 
 
