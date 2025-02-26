@@ -530,7 +530,7 @@
 
 <!-- Seção para Empresas -->
 <section id="empresas" class="py-8 px-6 md:px-12 bg-gray-50 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-[#0bbdc3] mb-6">Heynutri para Empresas</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-[#0bbdc3] mb-6">Heynutri para empresas</h2>
     
     <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
         Invista na saúde dos seus colaboradores e aumente a produtividade da sua empresa.  
@@ -773,34 +773,29 @@
     </script>
         
 
-<!-- Popup de Captura de Leads -->
-<div id="ebook-popup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-    <div class="bg-white rounded-lg p-6 w-80 md:w-96 shadow-lg text-center relative">
-        <button id="close-popup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl">✕</button>
-        
-        <h2 class="text-xl md:text-2xl font-bold text-[#0bbdc3]">Baixe o eBook Grátis!</h2>
-        <p class="text-sm text-gray-600 mt-2">As 5 Dicas de Ouro para aumentar o foco, energia e disposição no dia a dia.</p>
-        
-    <!-- Formulário -->
-    <form id="ebook-form" action="https://formsubmit.co/contato@heynutri.com.br" method="POST" class="mt-4">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://heynutri.com.br/obrigado"> 
-        <input type="hidden" name="_subject" value="Download eBook 5 Dicas de Ouro: Foco, Energia e Disposição"> 
+<!-- Popup -->
+<div id="ebook-popup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg relative w-96">
+        <button id="close-popup" class="absolute top-2 right-2 text-gray-600">&times;</button>
+        <h2 class="text-xl font-bold mb-4">Baixe seu eBook gratuito!</h2>
+        <p>Cadastre seu e-mail para receber o material gratuito.</p>
+        <form id="ebook-form" action="https://formsubmit.co/contato@heynutri.com.br" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://heynutri.com.br/obrigado"> 
+            <input type="hidden" name="_subject" value="Download eBook 5 Dicas de Ouro: Foco, Energia e Disposição"> 
 
-        <input type="email" name="email" placeholder="Digite seu e-mail" required 
-            class="w-full border p-2 rounded-md text-sm focus:ring focus:ring-[#0bbdc3]">
-        
-        <!-- Checkbox de Opt-in com Alinhamento Ajustado -->
-        <label class="flex items-center space-x-2 mt-3 text-xs text-gray-600">
-            <input type="checkbox" name="optin" value="sim" required class="w-4 h-4 align-middle">
-            <span class="leading-tight">Quero receber conteúdos exclusivos, novidades e ofertas da Heynutri.</span>
-        </label>
+            <input type="email" name="email" placeholder="Digite seu e-mail" required 
+                class="w-full border p-2 rounded-md text-sm focus:ring focus:ring-[#0bbdc3]">
+            
+            <label class="flex items-center space-x-2 mt-3 text-xs text-gray-600">
+                <input type="checkbox" name="optin" value="sim" required class="w-4 h-4 align-middle">
+                <span class="leading-tight">Quero receber conteúdos exclusivos, novidades e ofertas da Heynutri.</span>
+            </label>
 
-        <button type="submit" class="mt-3 w-full bg-[#0bbdc3] text-white py-2 rounded-lg font-bold hover:bg-[#099da3]">
-            Baixar eBook
-        </button>
-    </form>
-
+            <button type="submit" class="mt-3 w-full bg-[#0bbdc3] text-white py-2 rounded-lg font-bold hover:bg-[#099da3]">
+                Baixar eBook
+            </button>
+        </form>
 
         <p class="text-xs text-gray-500 mt-2">Não se preocupe, não enviamos spam. 😊</p>
     </div>
@@ -809,52 +804,60 @@
 <!-- Script para abrir/fechar o popup e redirecionamento -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const popup = document.getElementById("ebook-popup");
-        const closePopup = document.getElementById("close-popup");
+    const popup = document.getElementById("ebook-popup");
+    const closePopup = document.getElementById("close-popup");
 
-        // Exibe o popup automaticamente após 10 segundos
-        setTimeout(() => {
-            popup.classList.remove("hidden");
-        }, 10000);
+    if (!popup || !closePopup) {
+        console.error("Elemento do popup não encontrado. Verifique o HTML.");
+        return;
+    }
 
-        // Fecha o popup ao clicar no botão X
-        closePopup.addEventListener("click", function () {
+    console.log("Popup script carregado corretamente.");
+
+    // Exibe o popup automaticamente após 10 segundos
+    setTimeout(() => {
+        popup.classList.remove("hidden");
+        popup.style.display = "flex"; // Garante que o popup fique visível
+    }, 10000);
+
+    // Fecha o popup ao clicar no botão X
+    closePopup.addEventListener("click", function () {
+        popup.classList.add("hidden");
+        popup.style.display = "none"; // Oculta completamente
+    });
+
+    // Fecha o popup ao clicar fora dele
+    popup.addEventListener("click", function (event) {
+        if (event.target === popup) {
             popup.classList.add("hidden");
-        });
-
-        // Fecha o popup ao clicar fora dele
-        popup.addEventListener("click", function (event) {
-            if (event.target === popup) {
-                popup.classList.add("hidden");
-            }
-        });
-
-     // 🚀 Novo código para envio e redirecionamento
-document.getElementById("ebook-form").addEventListener("submit", function (event) {
-    event.preventDefault();  // Evita que a página recarregue
-    const form = this;
-    const formData = new FormData(form);
-
-    // Adiciona o campo para definir o assunto do e-mail recebido
-    formData.append("_subject", "Download eBook 5 Dicas de Ouro: Foco, Energia e Disposição");
-
-    fetch(form.action, {
-        method: "POST",
-        body: formData
-    })
-    .then(response => {
-        if (response.ok) {
-            // Redireciona para o link do eBook após o envio do formulário
-            window.location.href = "https://www.heynutri.com.br/ebook-foco-energia.pdf"; 
-        } else {
-            alert("Ocorreu um erro ao enviar o formulário. Tente novamente.");
+            popup.style.display = "none";
         }
-    })
-    .catch(error => {
-        console.error("Erro ao enviar o formulário:", error);
-        alert("Houve um problema! Verifique sua conexão e tente novamente.");
+    });
+
+    // Envio do formulário sem recarregar a página
+    document.getElementById("ebook-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const form = this;
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: "POST",
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = "https://www.heynutri.com.br/ebook-foco-energia.pdf";
+            } else {
+                alert("Ocorreu um erro ao enviar o formulário. Tente novamente.");
+            }
+        })
+        .catch(error => {
+            console.error("Erro ao enviar o formulário:", error);
+            alert("Houve um problema! Verifique sua conexão e tente novamente.");
+        });
     });
 });
+
 
 </script>
 
