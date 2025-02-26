@@ -781,24 +781,26 @@
         <h2 class="text-xl md:text-2xl font-bold text-[#0bbdc3]">Baixe o eBook Grátis!</h2>
         <p class="text-sm text-gray-600 mt-2">As 5 Dicas de Ouro para aumentar o foco, energia e disposição no dia a dia.</p>
         
-        <!-- Formulário -->
-        <form id="ebook-form" action="https://formsubmit.co/contato@heynutri.com.br" method="POST" class="mt-4">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://heynutri.com.br/obrigado"> 
+    <!-- Formulário -->
+    <form id="ebook-form" action="https://formsubmit.co/contato@heynutri.com.br" method="POST" class="mt-4">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://heynutri.com.br/obrigado"> 
+        <input type="hidden" name="_subject" value="Download eBook 5 Dicas de Ouro: Foco, Energia e Disposição"> 
 
-            <input type="email" name="email" placeholder="Digite seu e-mail" required 
-                class="w-full border p-2 rounded-md text-sm focus:ring focus:ring-[#0bbdc3]">
-            
-            <!-- Checkbox de Opt-in com Alinhamento Ajustado -->
-            <label class="flex items-center space-x-2 mt-3 text-xs text-gray-600">
-                <input type="checkbox" name="optin" value="sim" required class="w-4 h-4 align-middle">
-                <span class="leading-tight">Quero receber conteúdos exclusivos, novidades e ofertas da Heynutri.</span>
-            </label>
+        <input type="email" name="email" placeholder="Digite seu e-mail" required 
+            class="w-full border p-2 rounded-md text-sm focus:ring focus:ring-[#0bbdc3]">
+        
+        <!-- Checkbox de Opt-in com Alinhamento Ajustado -->
+        <label class="flex items-center space-x-2 mt-3 text-xs text-gray-600">
+            <input type="checkbox" name="optin" value="sim" required class="w-4 h-4 align-middle">
+            <span class="leading-tight">Quero receber conteúdos exclusivos, novidades e ofertas da Heynutri.</span>
+        </label>
 
-            <button type="submit" class="mt-3 w-full bg-[#0bbdc3] text-white py-2 rounded-lg font-bold hover:bg-[#099da3]">
-                Baixar eBook
-            </button>
-        </form>
+        <button type="submit" class="mt-3 w-full bg-[#0bbdc3] text-white py-2 rounded-lg font-bold hover:bg-[#099da3]">
+            Baixar eBook
+        </button>
+    </form>
+
 
         <p class="text-xs text-gray-500 mt-2">Não se preocupe, não enviamos spam. 😊</p>
     </div>
@@ -810,12 +812,9 @@
         const popup = document.getElementById("ebook-popup");
         const closePopup = document.getElementById("close-popup");
 
-        // Exibe o popup automaticamente após 10 segundos, mas apenas se o usuário ainda não interagiu
+        // Exibe o popup automaticamente após 10 segundos
         setTimeout(() => {
-            if (!localStorage.getItem("popupShown")) {
-                popup.classList.remove("hidden");
-                localStorage.setItem("popupShown", "true");
-            }
+            popup.classList.remove("hidden");
         }, 10000);
 
         // Fecha o popup ao clicar no botão X
@@ -830,25 +829,31 @@
             }
         });
 
-        // Enviar formulário e redirecionar para download do eBook
+        // 🚀 Novo código para envio e redirecionamento
         document.getElementById("ebook-form").addEventListener("submit", function (event) {
-            event.preventDefault();
+            event.preventDefault();  // Evita que a página recarregue
             const form = this;
             const formData = new FormData(form);
 
             fetch(form.action, {
                 method: "POST",
                 body: formData
-            }).then(response => {
+            })
+            .then(response => {
                 if (response.ok) {
                     window.location.href = "https://heynutri.com.br/ebook-foco-energia.pdf"; 
                 } else {
-                    alert("Ocorreu um erro. Tente novamente.");
+                    alert("Ocorreu um erro ao enviar o formulário. Tente novamente.");
                 }
-            }).catch(error => console.error("Erro ao enviar o formulário:", error));
+            })
+            .catch(error => {
+                console.error("Erro ao enviar o formulário:", error);
+                alert("Houve um problema! Verifique sua conexão e tente novamente.");
+            });
         });
     });
 </script>
+
 
 
 
