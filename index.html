@@ -150,6 +150,33 @@
             border: none;
         }
 
+        /* Estilo do balão de notificação */
+            .balao-notificacao {
+                position: absolute;
+                top: 1rem; /* Ajuste para melhor posicionamento */
+                right: 1rem;
+                background: white;
+                padding: 12px;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                width: 80%; /* Defina um tamanho menor no mobile */
+                max-width: 250px; /* Define um limite de largura */
+                font-size: 12px; /* Reduz o tamanho da fonte */
+            }
+
+            /* Ajustes específicos para mobile */
+            @media (max-width: 768px) {
+                .balao-notificacao {
+                    width: 70%; /* Reduz ainda mais no mobile */
+                    max-width: 200px;
+                    font-size: 10px; /* Fonte menor para melhor leitura */
+                    padding: 8px; /* Ajusta o espaçamento */
+                    top: 0.5rem; /* Ajusta melhor a posição */
+                    right: 0.5rem;
+                }
+            }
+
+
         </style>
 
 
@@ -259,10 +286,10 @@
         <img src="./images/paciente-feliz.png" alt="Paciente feliz após acompanhamento nutricional" class="w-full rounded-lg shadow-lg" loading="lazy">
 
         <!-- Balão de Notificação ajustado -->
-        <div class="absolute top-12 sm:top-16 right-2 sm:right-4 md:right-10 bg-white text-[#000000] p-3 rounded-lg shadow-md w-44 sm:w-56 md:w-72 text-xs flex items-start space-x-2 backdrop-blur-md bg-opacity-55">
-            <img src="./logo-heynutri-col.png" alt="Logo Heynutri" class="w-12 sm:w-14 md:w-16 h-12 sm:h-14 md:h-16" loading="lazy">
+        <div class="absolute top-8 sm:top-12 md:top-14 right-2 sm:right-4 md:right-10 bg-white text-[#000000] p-2 sm:p-3 md:p-4 rounded-lg shadow-md w-36 sm:w-48 md:w-72 text-[10px] sm:text-xs md:text-sm flex items-start space-x-2 backdrop-blur-md bg-opacity-55">
+            <img src="./logo-heynutri-col.png" alt="Logo Heynutri" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" loading="lazy">
             <div>
-                <p class="font-bold">Isso aí, Fê!</p>
+                <p class="font-bold text-[11px] sm:text-xs md:text-sm">Isso aí, Fê!</p>
                 <p class="leading-tight">
                     Que incrível ver seu progresso! 🎉
                     Pequenas escolhas diárias fazem toda a diferença! 💪🙌
