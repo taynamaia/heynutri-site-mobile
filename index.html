@@ -6,7 +6,7 @@
     
         <!-- ✅ SEO Meta Tags -->
         <meta name="description" content="Heynutri - Transforme sua saúde com atendimento nutricional personalizado e suporte contínuo.">
-        <meta name="keywords" content="nutrição, alimentação saudável, nutricionista online, plano alimentar, dieta personalizada">
+        <meta name="keywords" content="nutrição, alimentação saudável, nutricionista online, plano alimentar, dieta personalizada, saúde, bem-estar, qualidade de vida">
         <meta name="author" content="Heynutri">
     
         <!-- ✅ Open Graph (Facebook, WhatsApp) -->
@@ -207,7 +207,11 @@
     <!-- Botão Mobile -->
     <div class="flex items-center space-x-4">
         <a href="#cadastro" class="md:hidden bg-white text-[#0bbdc3] font-bold px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition-all">
-            Cadastre-se
+            onclick="gtag('event', 'cadastro_realizado', {
+                'event_category': 'Cadastro',
+                'event_label': 'Botão Mobile'
+             });">
+             Cadastre-se
         </a>
         <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">☰</button>
     </div>
@@ -388,7 +392,7 @@
                 <p class="mt-4 font-semibold">- Laura V.</p>
             </div>
             <div class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center flex flex-col items-center">
-                <p class="text-gray-600 italic">"Cada semana no futebol tenho melhorado minha performance, mas sobre o peso ainda não consegui reduzir."</p>
+                <p class="text-gray-600 italic">"Cada semana no futebol tenho melhorado minha performance."</p>
                 <p class="mt-4 font-semibold">- Emerson S.</p>
             </div>
         </div>
