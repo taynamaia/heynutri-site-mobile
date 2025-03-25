@@ -206,13 +206,14 @@
 
     <!-- Botão Mobile -->
     <div class="flex items-center space-x-4">
-        <a href="#cadastro" class="md:hidden bg-white text-[#0bbdc3] font-bold px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition-all">
-            onclick="gtag('event', 'cadastro_realizado', {
-                'event_category': 'Cadastro',
-                'event_label': 'Botão Mobile'
-             });">
-             Cadastre-se
-        </a>
+        <a href="#cadastro"
+        onclick="gtag('event', 'cadastro_realizado', {
+            event_category: 'Cadastro',
+            event_label: 'Botão Mobile'
+        });"
+        class="md:hidden bg-white text-[#0bbdc3] font-bold px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition-all">
+        Cadastre-se
+     </a>
         <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">☰</button>
     </div>
 
@@ -226,10 +227,14 @@
         <a href="http://wa.me/551148632295" class="text-white hover:text-gray-300 transition-all">Fale conosco</a>
 
         <!-- Botão "Cadastre-se" alinhado corretamente -->
-        <a href="#cadastro" 
-            class="bg-white text-[#0bbdc3] font-bold px-5 py-2 ml-4 rounded-lg shadow-md hover:bg-gray-200 transition-all flex items-center">
-            Cadastre-se
-        </a>
+        <a href="#cadastro"
+        onclick="gtag('event', 'cadastro_realizado', {
+            event_category: 'Cadastro',
+            event_label: 'Botão Mobile Menu'
+        });"
+        class="menu-item bg-white text-[#0bbdc3] font-bold px-4 py-2 rounded-lg shadow-md text-center hover:bg-gray-200 transition-all">
+        Cadastre-se
+     </a>
     </nav>
 
     <!-- Linha Branca Suave -->
